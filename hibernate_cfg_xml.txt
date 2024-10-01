@@ -1,0 +1,27 @@
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <!-- Drop and re-create the database schema on startup -->
+        <property name="hbm2ddl.auto">update</property>
+        <!-- JDBC Database connection settings -->
+        <property name="hibernate.connection.driver_class">org.h2.Driver</property>
+        <property name="hibernate.connection.url">jdbc:h2:mem:test</property>
+        <property name="hibernate.connection.username">sa</property>
+        <property name="hibernate.connection.password"/>
+
+        <!-- JDBC connection pool settings ... using built-in test pool -->
+        <!-- Select our SQL dialect -->
+        <property name="hibernate.dialect">org.hibernate.dialect.H2Dialect</property>
+        <!-- Echo the SQL to stdout -->
+        <property name="hibernate.show_sql">false</property>
+        <!-- Set the current session context -->
+        <property name="current_session_contex
+        t_class">thread</property>
+
+        <mapping class="org.example.kr.Student"/>
+        <mapping class="org.example.kr.Course"/>
+    </session-factory>
+</hibernate-configuration>
+
